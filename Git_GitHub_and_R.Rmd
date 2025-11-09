@@ -27,9 +27,7 @@ head(students)
 
 ```{r}
 # Remove the Name column
-Students_Clean <- subset(students, select = -Name)
 
-head(Students_Clean)
 ```
 
 
