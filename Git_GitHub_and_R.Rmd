@@ -1,6 +1,6 @@
 ---
 title: "Classwork Activity"
-author: "Enter Your Name"
+author: "Ally Bauer"
 output: html_notebook
 ---
 
@@ -24,10 +24,15 @@ head(students)
 
 
 ## Step 2: Drop a column
+```{r}
+library(dplyr)
+```
 
 ```{r}
 # Remove the Name column
 
+Students_Clean <- students %>%
+  select(-(Name))
 ```
 
 
@@ -35,7 +40,7 @@ head(students)
 Why might someone drop a column like name or ID from a dataset?
 
 ### Answer:
-
+- This could be done to ensure anonymity of the data or to remove bias.
 ## Step 3: Visualize
 ```{r}
 library(ggplot2)
@@ -62,6 +67,9 @@ ggplot(Students_Clean, aes(x = Major, y = Satisfaction, fill = Major)) +
 3. Do you think this chart is accurate?
 4. Why? Why not?
 
+- In the chart above, we can see that the Data science Majors have the most variability in their satisfaction level (the largest difference in the 25th and 75th percentiles) while Math Majors have the least variability. In contrast, the Math Majors have the largest variability between it's minimum and maximum values, excluding any outliers. It can also be seen that the Math Majors have the highest mean satisfaction level at about 7.5 while Computer Science and Data Science have the lowest at just above 6. It can also be seen that the Data Science Majors have an outlier at what appears to be about 11.7.
+- This chart may not be accurate because the satisfaction is supposed to be on a scale of 1-10 but the Data Science Major has an outlier of a value above 11.
+
 ## Step 5: Questions on Git, GitHub and R Markdown
 
 ### Questions:
@@ -74,4 +82,33 @@ ggplot(Students_Clean, aes(x = Major, y = Satisfaction, fill = Major)) +
 6. How could R Markdown help you explain your analysis to someone else?
 
 ### Answers:
+
+- Git add moves the changes that are made to the staging area. This is what allows the Git Commit function to commit the changes.
+- Git commit makes changes to your local repository, while git push makes changes to the remote repository. So git commit comes first to edit your own repository while git push publishes the changes.
+- Github allows for other coders to use your data. This can then be used for collaborations (such as team projects) or to get aid if you are having problems. This also allows you to take code and practice with other data sets.
+- Version control allows team members to work in the same files without overwriting each other's work. So if two people are working on a team project at the same time, they don't have to worry about messing each other up as they work.
+- The text in R Markdown is just text, it doesn't effect the code or other areas, this is where you add comments and explanations and analysis. The code chuck holds the code you are working in, this is where you can edit data sets and do analysis on the data.
+- R Markdown can be used to help you explain your analysis because you are physically interpreting your analysis into words. This means you can do an analysis of your data and explain to others what it is representing and why it is important.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
